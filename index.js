@@ -24,7 +24,7 @@ app.get("/employees/department/:department", (req, res) => {
 });
 //employees/department/HR
 
-//2 -> Geting error
+//2
 let bikes = [
   { make: "Hero", model: "Splendor", mileage: 80 },
   { make: "Bajaj", model: "Pulsar", mileage: 60 },
@@ -33,7 +33,7 @@ let bikes = [
 function filterByMileage(bike, minMileage) {
   return bike.mileage > minMileage;
 }
-app.get("/bikes/mileage/:mileage", (req, res) => {
+app.get("/bikes/mileage/:minMileage", (req, res) => {
   let minMileage = parseInt(req.params.minMileage);
   let result = bikes.filter((bike) => filterByMileage(bike, minMileage));
   res.json(result);
